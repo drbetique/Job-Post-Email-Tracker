@@ -1,0 +1,56 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Editor directories and files
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+Thumbs.db
+Desktop.ini
+
+# Credentials and tokens (do NOT commit these)
+credentials.json
+client_secret_*.json
+client_secret_*.json.*
+token_gmail.pickle
+token_sheets.pickle
+*.pem
+*.key
+*.crt
+.job_tracker_creds/
+
+# Exports, backups and caches
+%USERPROFILE%/Desktop/Job Posts/
+processed_jobs_export*.csv
+processed_jobs_export*.xlsx
+sheet_backup_*.csv
+link_cache.sqlite
+*.sqlite
+
+# Environment files
+.env
+.env.*
+# Credentials and tokens
+credentials.json
+client_secret_*.json
+token_*.pickle
+.processed_jobs_export.csv
+processed_jobs_export.csv
+sheet_backup*.csv
+.env
+.venv/
+__pycache__/
