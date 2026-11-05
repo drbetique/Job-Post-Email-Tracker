@@ -5,14 +5,15 @@ Usage (PowerShell as the user who will run the scheduled task):
 # Run in PowerShell
 .
 # Example:
-#   .\secure_move_credentials.ps1 -Files @('credentials.json','client_secret_69687429889-3l1a87v0m0ki7f6dktfjspid37om66t7.apps.googleusercontent.com.json','token_gmail.pickle','token_sheets.pickle')
+#   .\secure_move_credentials.ps1 -Files @('credentials.json','client_secret_<id>.apps.googleusercontent.com.json','token_gmail.pickle','token_sheets.pickle')
+#   (use the exact file name Google gave you for the OAuth client file)
 #
 # This script will move the files to %USERPROFILE%\.job_tracker_creds (hidden) and run setx to persist env vars.
 # You must restart your shell (or log out/in) for setx changes to be available in new sessions.
 # For scheduled tasks, configure the task to run as the same user or set the env vars in the task XML/Action.
 #>
 param(
-    [string[]]$Files = @('credentials.json','client_secret_69687429889-3l1a87v0m0ki7f6dktfjspid37om66t7.apps.googleusercontent.com.json','token_gmail.pickle','token_sheets.pickle')
+    [string[]]$Files = @('credentials.json','client_secret.json','token_gmail.pickle','token_sheets.pickle')
 )
 
 $home = [Environment]::GetFolderPath('UserProfile')

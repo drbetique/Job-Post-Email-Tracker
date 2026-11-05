@@ -1,30 +1,5 @@
 # Job Post Email Tracker
 
-A small utility to watch job-notification emails (Gmail), extract job postings, classify by role, translate Finnish text to English, and write results to a Google Sheet. The project also exports the processed sheet as CSV and includes helpers to back up and sort the data.
-
-This repository is intended to run on Windows (PowerShell) but the Python scripts are cross-platform.
-
-## Repository contents
-- `job-tracker.py` — main tracker: reads Gmail, extracts messages, translates subject/snippet, detects a job role, writes batched rows to the `Processed Jobs` sheet/tab, and exports a CSV.
-- `add_role_and_sort.py` — helper: backs up the sheet, computes `Role` and translated columns for existing rows, deduplicates, writes the `Processed Jobs` tab, and sorts by `Role`.
-- `requirements.txt` — Python dependencies.
-- `setup_venv.ps1` — helper to create a virtual environment and install dependencies.
-- `secure_move_credentials.ps1` — helper to move credentials/tokens to a secure hidden folder and persist env vars.
-- `.gitignore` — ignores secrets, tokens, exports, backups and the `.venv` folder.
-
-## Quickstart (recommended)
-
-1. Create and activate a virtual environment (PowerShell):
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-```
-
-2. Install dependencies:
-
-# Job Post Email Tracker
-
 A small Python utility that reads job-notification emails from Gmail, extracts posted job links, classifies by role, translates Finnish text to English, and writes results to a Google Sheet. The project also exports the processed sheet as a UTF-8 (BOM) CSV and converts the CSV to XLSX. It includes helpers for backup, repair of CSV encoding, link resolution caching, and verification.
 
 This repository is commonly run on Windows (PowerShell helpers are included), but the Python scripts are cross-platform.
@@ -148,7 +123,7 @@ See `requirements.txt`. Primary runtime packages include:
 - openpyxl
 
 ## License & contributing
-Open issues/PRs are welcome. Do not include credentials or token files in PRs. If you intend to make this public, add a license file.
+Released under the [MIT License](LICENSE). Issues and pull requests are welcome; never include credentials or token files in them. Planned work is in [ROADMAP.md](ROADMAP.md).
 
 ## Prepare to push to GitHub (safety checklist)
 
