@@ -18,5 +18,5 @@ Planned work, roughly in the order I intend to do it.
 - [ ] Optional daily summary of new postings by role.
 
 ## Housekeeping
-- [ ] Replace the hard-coded default sheet ID with required configuration.
+- [x] Replace the hard-coded default sheet ID with required configuration.
 - [ ] Cross-platform equivalents of the PowerShell helpers.

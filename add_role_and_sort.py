@@ -24,7 +24,13 @@ except Exception:
     set_cached = lambda u, f, t: None
 
 # Use same spreadsheet id as job-tracker.py
-SHEET_ID = os.environ.get('SHEET_ID', "1lhWIUbdSYepoz0zPZskHPglcRB78Rq2HyiL1wzgkAxE")
+SHEET_ID = os.environ.get('SHEET_ID', '')
+if not SHEET_ID:
+    raise SystemExit(
+        "SHEET_ID is not set. Set it to the spreadsheetId from your Google Sheet URL "
+        "(https://docs.google.com/spreadsheets/d/<SPREADSHEET_ID>/edit), "
+        "for example in PowerShell: setx SHEET_ID <SPREADSHEET_ID>"
+    )
 TOKEN_FILE = os.environ.get('TOKEN_SHEETS_FILE', 'token_sheets.pickle')
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 BACKUP_CSV = os.environ.get('BACKUP_CSV', 'sheet_backup.csv')

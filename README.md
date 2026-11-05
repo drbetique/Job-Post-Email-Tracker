@@ -72,7 +72,7 @@ python .\export_processed_jobs.py
 ## Configuration / Environment variables
 The scripts can be configured via environment variables. Useful ones:
 
-- `SHEET_ID` — (recommended) Google Sheets spreadsheetId to use instead of the hardcoded default.
+- `SHEET_ID` — **(required)** the Google Sheets spreadsheetId, i.e. the long ID in the sheet's URL. There is no default. In PowerShell: `setx SHEET_ID <SPREADSHEET_ID>`, then open a new shell.
 - `CREDENTIALS_FILE` — Path to OAuth client secrets JSON used by google-auth.
 - `TOKEN_GMAIL_FILE` — Path to Gmail token pickle file used to cache OAuth tokens.
 - `TOKEN_SHEETS_FILE` — Path to Sheets token pickle file used to cache OAuth tokens.

@@ -10,7 +10,13 @@ spec.loader.exec_module(job_mod)
 # authenticate function available as job_mod.authenticate
 auth_func = getattr(job_mod, 'authenticate')
 
-SHEET_ID = os.environ.get('SHEET_ID', '1lhWIUbdSYepoz0zPZskHPglcRB78Rq2HyiL1wzgkAxE')
+SHEET_ID = os.environ.get('SHEET_ID', '')
+if not SHEET_ID:
+    raise SystemExit(
+        "SHEET_ID is not set. Set it to the spreadsheetId from your Google Sheet URL "
+        "(https://docs.google.com/spreadsheets/d/<SPREADSHEET_ID>/edit), "
+        "for example in PowerShell: setx SHEET_ID <SPREADSHEET_ID>"
+    )
 PROCESSED_SHEET_NAME = 'Processed Jobs'
 
 if __name__ == '__main__':

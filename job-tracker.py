@@ -26,8 +26,13 @@ except Exception:
 # === CONFIGURATION - CHANGE THIS LINE ===
 # Use only the spreadsheetId (the long ID from the sheet URL)
 # Example sheet URL: https://docs.google.com/spreadsheets/d/<SPREADSHEET_ID>/edit
-# Use only the spreadsheetId (the long ID from the sheet URL)
-SHEET_ID = os.environ.get('SHEET_ID', "1lhWIUbdSYepoz0zPZskHPglcRB78Rq2HyiL1wzgkAxE")
+SHEET_ID = os.environ.get('SHEET_ID', '')
+if not SHEET_ID:
+    raise SystemExit(
+        "SHEET_ID is not set. Set it to the spreadsheetId from your Google Sheet URL "
+        "(https://docs.google.com/spreadsheets/d/<SPREADSHEET_ID>/edit), "
+        "for example in PowerShell: setx SHEET_ID <SPREADSHEET_ID>"
+    )
 # Name of the sheet/tab where processed rows will be placed
 PROCESSED_SHEET_NAME = 'Processed Jobs'
 DEFAULT_HEADERS = ['MessageID','Timestamp','Subject (EN)','Sender','Date','Snippet (EN)','Links','Resolved Links','Link Titles','Role']
