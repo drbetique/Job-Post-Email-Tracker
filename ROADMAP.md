@@ -7,8 +7,8 @@ Planned work, roughly in the order I intend to do it.
 - [ ] Make a failed run resumable instead of reprocessing every message.
 
 ## Quality
-- [ ] Unit tests for role detection, link extraction and CSV export.
-- [ ] A CI job that byte-compiles the scripts and runs the tests on every push.
+- [ ] Unit tests for CSV export. (Role detection, link extraction and the Sheets retry helper are covered.)
+- [x] A CI job that byte-compiles the scripts and runs the tests on every push.
 - [ ] Improve title extraction (schema.org and meta description) and truncate long titles sensibly.
 
 ## Features
